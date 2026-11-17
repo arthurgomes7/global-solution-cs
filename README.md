@@ -20,7 +20,7 @@ O **Painel da Brigada** é uma lista de tarefas da brigada. O coordenador faz lo
 | acima de 10 e até 50 ha | Médio |
 | acima de 50 ha | Grande |
 
-> Os dados ficam apenas na memória e se perdem ao fechar o sistema. Os exemplos usados são fictícios.
+> Os locais são salvos no arquivo `locais.json`, na pasta do executável, e continuam disponíveis ao abrir o sistema de novo. Os exemplos usados são fictícios.
 
 ## Pessoa real beneficiada
 
@@ -50,4 +50,5 @@ O Painel da Brigada reúne esses locais numa única tela, com endereço, tamanho
 - C#
 - .NET 10 (LTS)
 - Windows Forms
+- System.Text.Json
 - Git e GitHub
