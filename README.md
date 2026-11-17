@@ -1,6 +1,10 @@
 # Painel da Brigada
 
-**Equipe:** _(preencher com o nome da equipe)_
+**Equipe:** 
+Arthur Gomes - RM 560771
+Luiz Silva - RM 560110
+Matheus Siroma - RM 560248
+Pedro Estevam - RM 560642
 
 Projeto da disciplina **C# Software Development** da Global Solution FIAP 2026.2, com o tema **CitizenTech**.
 
