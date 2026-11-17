@@ -1,11 +1,14 @@
+using System.Text.Json.Serialization;
+
 namespace PainelBrigada.Models
 {
     public class LocalQueima
     {
-        public string Nome { get; private set; }
-        public string Endereco { get; private set; }
-        public double Hectares { get; private set; }
+        [JsonInclude] public string Nome { get; private set; }
+        [JsonInclude] public string Endereco { get; private set; }
+        [JsonInclude] public double Hectares { get; private set; }
 
+        [JsonIgnore]
         public string Porte
         {
             get
@@ -18,7 +21,9 @@ namespace PainelBrigada.Models
             }
         }
 
-        public LocalQueima(string nome, string endereco, double hectares)
+        // Usado também pelo JSON para recriar o objeto; as validações continuam valendo na leitura
+        [JsonConstructor]
+        public LocalQueima(string nome,string endereco, double hectares)
         {
             if (string.IsNullOrWhiteSpace(nome))
                 throw new ArgumentException("O nome é obrigatório.");
