@@ -1,3 +1,4 @@
+using System.Text.Json;
 using PainelBrigada.Models;
 
 namespace PainelBrigada.Forms
@@ -5,11 +6,45 @@ namespace PainelBrigada.Forms
     public partial class FormQueimas : Form
     {
         private List<LocalQueima> locais = new();
+        private readonly string arquivo = Path.Combine(AppContext.BaseDirectory, "locais.json");
 
         public FormQueimas()
         {
             InitializeComponent();
+            CarregarLocais();
             AtualizarCards();
+        }
+
+        private void CarregarLocais()
+        {
+            if (!File.Exists(arquivo))
+                return;
+
+            try
+            {
+                string json = File.ReadAllText(arquivo);
+                locais = JsonSerializer.Deserialize<List<LocalQueima>>(json) ?? new List<LocalQueima>();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi possível ler os locais salvos. A lista começará vazia.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                locais = new List<LocalQueima>();
+            }
+        }
+
+        private void SalvarLocais()
+        {
+            try
+            {
+                string json = JsonSerializer.Serialize(locais, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(arquivo, json);
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Não foi possível salvar os locais.", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNovoLocal_Click(object sender, EventArgs e)
@@ -18,6 +53,7 @@ namespace PainelBrigada.Forms
             if (janela.ShowDialog() == DialogResult.OK && janela.LocalCriado != null)
             {
                 locais.Add(janela.LocalCriado);
+                SalvarLocais();
                 AtualizarCards();
             }
         }
@@ -84,6 +120,7 @@ namespace PainelBrigada.Forms
             if (resposta == DialogResult.Yes)
             {
                 locais.Remove(local);
+                SalvarLocais();
                 AtualizarCards();
             }
         }
