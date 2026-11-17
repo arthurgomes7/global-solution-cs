@@ -1,10 +1,10 @@
 # Painel da Brigada
 
 **Equipe:** 
-Arthur Gomes - RM 560771
-Luiz Silva - RM 560110
-Matheus Siroma - RM 560248
-Pedro Estevam - RM 560642
+- Arthur Gomes - RM 560771
+- Luiz Silva - RM 560110
+- Matheus Siroma - RM 560248
+- Pedro Estevam - RM 560642
 
 Projeto da disciplina **C# Software Development** da Global Solution FIAP 2026.2, com o tema **CitizenTech**.
 
@@ -24,7 +24,12 @@ O **Painel da Brigada** é uma lista de tarefas da brigada. O coordenador faz lo
 
 ## Pessoa real beneficiada
 
-_(preencher: nome, função e brigada do brigadista entrevistado pela equipe, e o que ele contou sobre o problema)_
+O projeto é voltado para as **pessoas que vivem perto de áreas de vegetação seca**, como Cerrado, Pantanal e campos naturais: famílias da zona rural, pequenos produtores e moradores de cidades vizinhas. São elas que mais sofrem quando um incêndio sai do controle. A fumaça piora a respiração de idosos, crianças e de quem tem asma ou bronquite, e o fogo pode atingir casas, pastos, criações e plantações.
+
+A queima prescrita protege essas pessoas antes que o problema aconteça. Quando a brigada queima pequenas áreas de forma planejada, a vegetação seca acumulada diminui, e um incêndio que começar depois encontra menos combustível: fica menor, gera menos fumaça e é mais fácil de controlar.
+
+O Painel da Brigada reúne esses locais numa única tela, com endereço, tamanho da área e porte de cada um. Assim, a brigada sabe o que ainda falta fazer e começa pelas áreas maiores. Cada queima planejada que sai do papel é uma comunidade com menos risco de enfrentar um incêndio de grandes proporções.
+
 
 ## Instruções de execução
 
